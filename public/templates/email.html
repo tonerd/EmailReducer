@@ -1,0 +1,35 @@
+<div id="emailTemplate" class="container">
+  <form name="emailForm" class="row">
+    <div class="form-group col-xs-6">
+      <label for="emailAddress">Add an email address</label>
+      <input id="emailAddress" type="email" name="emailAddress" placeholder="Enter email" ng-model="emailAddress" required/>
+      <input type="button" value="Add" class="btn btn-primary" ng-disabled="!emailForm.emailAddress.$valid" ng-click="addEmailAddress()"/>
+      <span class="alert alert-danger" ng-show="emailForm.emailAddress.$error.email">Invalid email</span>
+    </div>
+    <div class="col-xs-6">
+      <input type="button" value="Remove Duplicates" class="btn btn-primary" ng-click="removeDuplicateEmailAddresses()" />
+    </div>
+  </form>
+  <div class="row">
+    <div class="col-xs-6">
+      <table class="table table-bordered">
+        <tr class="bg-primary">
+          <th>Email Addresses</th>
+        </tr>
+        <tr ng-repeat="email in emailAddresses track by $index">
+          <td>{{email}}</td>
+        </tr>
+      </table>
+    </div>
+    <div class="col-xs-6">
+      <table class="table table-bordered">
+        <tr class="bg-primary">
+          <th>Filtered</th>
+        </tr>
+        <tr ng-repeat="filteredEmail in filteredEmailAddresses">
+          <td>{{filteredEmail}}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

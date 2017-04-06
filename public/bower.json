@@ -1,0 +1,13 @@
+{
+  "name": "email-reducer",
+  "description": "Simple application to take a list of email addresses and remove duplicates.",
+  "version": "0.0.1",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "angular": "1.6.3",
+    "angular-mocks": "^1.6.4",
+    "angular-route": "^1.6.4",
+    "bootstrap": "^3.3.7"
+  }
+}
